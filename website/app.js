@@ -36,7 +36,7 @@ const postData = async (url = '', data = {}) => {
 
 // Update data in the UI
 const updateData = async () => {
-    const projectData = await getData('/data');
+    const projectData = await getData('/weather');
     document.getElementById('date').innerHTML = `${projectData.date}`;
     document.getElementById('temp').innerHTML = `${projectData.temperature} &#8457`;
     document.getElementById('content').innerHTML = projectData.feelings;
@@ -45,12 +45,12 @@ const updateData = async () => {
 const generateData = async () => {
     const feelings = document.getElementById('feelings').value;
     const zip = document.getElementById('zip').value;
-    const response = await fetch(`${url}${zip}${apiKey}`);
+    const response = await fetch(`${baseURL}${zip}${apiKey}`);
     try {
         const data = await response.json();
         data.feelings = feelings;
         data.date = newDate;
-        await postData('/', data);
+        await postData('/weather', data);
         updateData();
     } catch (error) {
         console.error("error", error);
