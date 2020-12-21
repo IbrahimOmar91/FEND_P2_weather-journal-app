@@ -1,13 +1,14 @@
-body{
+body {
     background: #fffff8;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-#app{
+
+/*
+#app {
     display: grid;
     grid-auto-rows: minmax(150px, auto);
-    /* grid-template-columns:  */
-    height:100vh;
+    height: 100vh;
     background: #f23557;
     color: #f0d43a;
     justify-content: center;
@@ -15,97 +16,160 @@ body{
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
 }
+*/
 
-.holder{
-
+#app {
+    align-items: stretch;
+    background: transparent;
+    border-radius: 2rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    margin: 0 auto;
+    text-align: center;
+    width: 75vw;
 }
 
-.entry{
+#zip,
+#feelings {
+    background: var(--color-secondary);
+    border: 0.2rem solid var(--color-dark);
+    border-radius: 1rem;
+    color: var(--color-accent);
+    display: block;
+    font-size: 2rem;
+    height: 6rem;
+    text-align: center;
+    width: 100%;
+}
+
+.zip {
+    position: relative;
+    width: 100%;
+}
+
+#zip {
+    padding: 1.5rem 1rem;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+#zip:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--color-accent);
+    transition: all 5s ease-in-out 0s;
+}
+
+
+/* Feelings field */
+
+.feel {
+    position: relative;
+    width: 100%;
+}
+
+#feelings {
+    overflow: hidden;
+    padding: 3rem;
+    resize: none;
+}
+
+.holder {}
+
+.entry {
     background: rgba(59, 74, 107, .4);
 }
 
-#entryHolder{
+#entryHolder {}
 
-}
+#date {}
 
-#date{
+#temp {}
 
-}
+#content {}
 
-#temp{
+.headline {}
 
-}
+.title {}
 
-#content{
-
-}
-
-.headline {
-
-}
-.title{
-
-}
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
-label{
-    display:block;
+
+label {
+    display: block;
     font-size: 27px;
 }
 
-input{
-    display:block;
+input {
+    display: block;
     height: 60px;
     width: 320px;
-    background:#22b2da;
+    background: #22b2da;
     color: #f0d43a;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
     border: none;
 }
 
-button{
-    width: 400px;
-    height: 100px;
-    background: #3b4a6b;
-    color: #f0d43a;
-    font-size: 26px;
-    font-family: 'Oswald', sans-serif;
+.button {
+    background-color: #e7e7e7;
+    color: black;
     border: none;
-    box-shadow: 2px 4px 5px #444;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
 }
-h1{
+
+.button:hover {
+    background-color: #4CAF50;
+    /* Green */
+    color: white;
+}
+
+h1 {
     font-size: 36px;
 }
 
-textarea{
-    background:#22b2da;
+textarea {
+    background: #22b2da;
     color: #f0d43a;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
 }
+
+
 /* Reset style for HTML element on active to have no border*/
+
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
     outline: none;
 }
+
+
 /* Style for Placeholder Text*/
-::placeholder { /* Firefox, Chrome, Opera */ 
-    color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
 
-} 
-  
-:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
-    color: #f0d43a; 
+::placeholder {
+    /* Firefox, Chrome, Opera */
+    color: #f0d43a;
     font-family: 'Oswald', sans-serif;
+}
 
-} 
-  
-::-ms-input-placeholder { /* Microsoft Edge */ 
-    color: #f0d43a; 
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #f0d43a;
     font-family: 'Oswald', sans-serif;
+}
 
-} 
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #f0d43a;
+    font-family: 'Oswald', sans-serif;
+}

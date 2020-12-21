@@ -20,31 +20,19 @@ app.use(cors());
 // Initialize the main project folder
 app.use(express.static('website'));
 
-
 // Setup Server
 const port = 3000;
-/* Spin up the server*/
 const server = app.listen(port, listening);
 function listening() {
-    // console.log(server);
     console.log(`running on localhost: ${port}`);
 };
 
 // Post 
 app.post('/weather', (req, res) => {
-    const {
-        date,
-        temperature,
-        feelings
-    } = req.body
-    projectData.date = date;
-    projectData.temperature = temperature;
-    projectData.feelings = feelings;
-    console.log('data received from client:')
-    console.log(req.body)
-    res.send({
-        success: true
-    })
+    projectData['date'] = req.body.date;
+    projectData['temp'] = req.body.temp;
+    projectData['content'] = req.body.content;
+    res.send(projectData);
 })
 
 // get routes / endpoints
